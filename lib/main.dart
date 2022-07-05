@@ -16,8 +16,6 @@ class MyApp extends StatelessWidget {
       initialState: AppState.initialState(),
       middleware: [thunkMiddleware]);
 
-  MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
@@ -27,14 +25,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(),
+        home: MyHomePage(),
       ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
 
   // List<dynamic> locations = [];
 
@@ -51,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title:   const Text("Flutter Redux demo"),
       ),
       body:   Center(
-        child: SizedBox(
+        child:   Container(
           height: 400.0,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
